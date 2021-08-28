@@ -2,14 +2,137 @@
 <html>
   <head>
     <title>Blog3</title>
+  
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
   <body>
+  <header>
+  <div class="container">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+   <a class="navbar-brand" href="#">
+  <%= image_tag "logo.jpg" %>
+  </a> 
+   <!-- <a class="navbar-brand" href="#">MyBook</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+ 
+</nav>
+ </div>
+</header>
+<div class="clear"></div>
+<main>
+<div class="contaner-fluide">
     <%= yield %>
+  <!-- <div class="bnr" id="home">    
+  <div id="top" class="callbacks_contaner">
+    <ul class="rslides" id="slider4">
+      <li>
+        <%= image_tag("sunset.jpg", alt: "" ) %>
+      </li>
+      <li>
+        <%= image_tag("index_1.jpg", alt: "" ) %>
+      </li>
+      <li>
+        <%= image_tag("north_stars.jpg", alt: "" ) %>
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"> </div>
+  </div>  -->
+  <!-- <div class="carousel slide" data-ride="carousel" id="slides"> -->
+  <!--  <ul class="carousel-indicators">
+    <li data-target="#slides" data-slide-to="0" class="active"></li>
+   <li data-target="#slides" data-slide-to="1"></li>
+   <li data-target="#slides" data-slide-to="2"></li>
+  </ul> -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"> 
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="text-center">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!--  <img src="..." > -->
+          <!--  <div class="d-block w-100" alt="...">   -->
+   
+          <div class="container">
+            <%= image_tag("sunset.jpg")%>
+            <div class="carousel-caption">
+              <h1 class="display-2">My own design</h1>
+              <h3>I study, sorry</h3>
+              <button type="button" class="btn btn-outline-light btn-lg">You see</button>
+              <button type="button" class="btn btn-outline-warning btn-lg">Try yourself</button>
+            </div>
+        
+          </div>  
+        </div>
+        <div class="carousel-item">
+            <!--   <div class="d-block w-100" alt="...">   -->
+          <div class="container">
+            <%= image_tag("wave1.jpg")%>
+          </div>
+     
+        </div>
+        <div class="carousel-item">
+          <div class="text-center"> 
+            <div class="container">
+     
+               <!--  <div class="d-block w-100" alt="...">  -->
+              <%= image_tag("north_stars.jpg")%>
+            </div>
+          </div>
+        </div>
+  
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>  
+  </div>
+</div>
+</main>    
   </body>
 </html>
