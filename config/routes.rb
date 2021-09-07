@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   root to: "books#index"
   get 'posts/all', to: 'posts#all'
-  get 'posts/:id', to: 'posts#show'
+  #get 'posts/:id', to: 'posts#show'
+  get 'books/:id', to: 'books#show'
 
 
 
