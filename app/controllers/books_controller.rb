@@ -18,6 +18,6 @@ class BooksController < ApplicationController
     redirect_to '/books/' + @book.id.to_s
   end
   def book_params
-    params.require(:book).permit(:title, :topic_id, :cover_url, authorship_id: [])
+    params.require(:book).permit(:title, :topic_id, :cover_url, :author_id)
   end
 end

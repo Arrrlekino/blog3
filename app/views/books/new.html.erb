@@ -12,17 +12,20 @@
       <% end %>  
     </select>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">CHOOSE AUTHOR!!!</label>
-    <select class="form-control" name="book[author_id]">
-      <% @authors.each do |author| %>
-        <option value="<%= author.id %>"><%= author.name %></option>
-      <% end %>  
+  
+
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Select an Author</label>
+     <select class="form-control" name="book[author_id]">
+  <% @authors.each do |author| %>
+   <option value="<%= author.id %>"><%= author.name %></option>
+  <% end %>  
     </select>
   </div>
-    <div class="form-group">
+  
+  <div class="form-group">
     <label for="cover_url">COVER BOOK</label>
-    <input type="text" title="book[cover_url]" class="form-control">
+    <input type="text" cover_url="book[cover_url]" class="form-control">
   </div>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <button type="submit" class="btn btn-primary">CREATE</button>

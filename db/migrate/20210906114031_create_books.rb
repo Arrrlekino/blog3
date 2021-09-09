@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration[6.0]
 
       t.string :title
       t.string :cover_url
-      t.integer :authorship_id
+      t.integer :author_id
       t.integer :topic_id
 
       t.timestamps
