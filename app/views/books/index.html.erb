@@ -1,11 +1,12 @@
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"> 
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"> 
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+  </div> 
     <div class="text-center">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -50,4 +51,32 @@
         </button>
       </div>
     </div>  
-  </div>
+  <div class="col-md-8"> 
+
+<!--   <h1 class="my-4">
+        <% if @topic == nil %>
+          Все посты
+        <% else %>
+          <%= @topic.title %>
+        <% end %>
+    </h1>
+  -->    
+
+   <% @books.each do |book| %>
+      <div class="card mb-4">
+        <div class="card-body">
+           <h2 class="card-title"><%= book.title %></h2>
+           <h2 class="card-title"><%= book.topic_id %></h2> 
+           <h2 class="card-title"><%= book.author_id %></h2>
+           <h2 class="card-title"><%= book.cover_url %></h2>
+          <a href="/books/<%= book.id %>" class="btn btn-primary">READ ALL &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+          <%= book.created_at %>
+        </div>
+      </div>  
+    <% end %> 
+  </div>  
+  
+
+
